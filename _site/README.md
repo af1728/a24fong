@@ -1,3 +1,3 @@
 # ~a24fong
 
-Personal website made with [https://jekyllrb.com/](Jekyll).
+Personal website made with [Jekyll](https://jekyllrb.com/).
