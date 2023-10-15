@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	    <title>How I Made My Personal Website</title>
+		<meta name="author" content="AJ Fong" />
+	</head>
+	<body>
+	
+	    <header>
+            <h1>AJ Fong</h1>
+        </header>
+		
+	    <nav>
+    
+        <a href="/">home</a>
+	
+        <a href="/resources.html">resources</a>
+	
+        <a href="/blog.html">blog</a>
+	
+</nav>
+	    <h2>How I Made My Personal Website</h2>
+<p>14 Oct 2023</p>
+
+<p>The goal of this post is to provide an overview of how I, as a graduate student at the University
+of Waterloo, used Jekyll to create my website and hosted it on the faculty Linux server.</p>
+
+<p>Jekyll is a free static site generator. It works best for creating highly customised websites since
+you can alter the styling, add scripts, and add other functionality significantly beyond what is
+offered by template-based website builders, and is the way to go if you are confident with HTML and
+want to make use of its blogging features.</p>
+
+<p>I used a Windows device, but the steps should not vary wildly across operating systems.</p>
+
+<h3 id="setup">Setup</h3>
+
+<p>To get started, I installed
+<a href="https://jekyllrb.com/docs/installation">Ruby and Jekyll</a>. I also (optionally) used
+<a href="https://git-scm.com/downloads">Git</a>—a version control system which helps us track changes in our
+website, and hosted my repository on <a href="https://github.com/">Github</a>—the most popular platform for
+Git—you will need an account.</p>
+
+<p>If you are using Github, when installing Git, set your default branch name as <code class="language-plaintext highlighter-rouge">main</code> for
+consistency.</p>
+
+<h3 id="making-the-website">Making the website</h3>
+
+<p>After installing Jekyll, I created a new directory called <strong>website</strong> (you can call this whatever
+you like). Then I wrote a simple homepage named <code class="language-plaintext highlighter-rouge">index.html</code> within <strong>website</strong>. I had to learn
+HTML to do this (<a href="https://developer.mozilla.org/en-US/docs/Learn/HTML">MDN Web Docs</a> was a very
+helpful resource).</p>
+
+<p>Next I navigated to <strong>website</strong> in Terminal.</p>
+
+<hr />
+
+<h4 id="aside-how-to-navigate-in-terminal">Aside: How to navigate in Terminal</h4>
+
+<p>It took me a while to figure out how to use the command line and I have not found any dedicated
+resources on navigating Terminal, so I will share what I have learned in the hopes that it might
+help someone like me.</p>
+
+<p>Terminal is another way to navigate the computer. When you open Terminal, the last line reads
+<strong>PS C:\Users\username&gt;</strong>. Here <strong>C:\Users\username</strong> is the directory that you are in now. To go
+into a subfolder—suppose that your <strong>website</strong> directory is in here as an example—you would type at
+the end of the last line <code class="language-plaintext highlighter-rouge">cd website</code> and press Enter. The command <code class="language-plaintext highlighter-rouge">cd ..</code> allows you to go up a
+directory.</p>
+
+<p>Alternatively, if you have your desired directory open in File Explorer, you can right click any
+blank space and click ‘Run in Terminal’.</p>
+
+<hr />
+
+<p>Then I ran the following commands:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll build
+jekyll serve
+</code></pre></div></div>
+
+<p>This produced the website locally and hosted it on my laptop. By running these commands after any
+major changes I could see how the website will look when it is ultimately hosted at the University
+of Waterloo. This also gave me a chance to debug before the website is live.</p>
+
+<p>After running <code class="language-plaintext highlighter-rouge">jekyll build</code>, Jekyll will generate some folders in our project. The most important
+one is <strong>_site</strong> which stores the generated website.</p>
+
+<h3 id="initialising-the-git-repository">Initialising the Git repository</h3>
+
+<p>As mentioned previously, I used <a href="https://github.com/">Github</a> to track changes to <strong>website</strong> and
+sync it with the University of Waterloo servers.</p>
+
+<p>Switching to Terminal, I executed the following commands:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd _site                       # Enter _site folder
+
+# Build github repo
+git init                       # Create a Git repository skeleton
+git add --all                  # Begin tracking all files in your directory
+git commit -m "Initial commit" # Commit changes
+</code></pre></div></div>
+
+<p>This initialised a local git repository on my device. Next I needed to connect the local repository
+to the University.</p>
+
+<p>On Github, I created a new repository. The name of the repository is not important here, and you
+can choose whether to have the repository be public or private. I left everything else as default.</p>
+
+<p>Once this was finished, I linked the remote repository to the local one by returning to Terminal
+and running the commands suggested by Github:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add origin &lt;url-to-repository&gt;
+git branch -M main
+git push -u origin main
+</code></pre></div></div>
+
+<p>I was prompted to log in to Github and authorise git-ecosystem to access the account. Now my
+commits are pushed to the server!</p>
+
+<h3 id="hosting-the-website-at-the-university-linux-server">Hosting the website at the university Linux server</h3>
+
+<p>Now we need to remotely log into the University of Waterloo server to host the website.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh &lt;UWuserid&gt;@linux.math.uwaterloo.ca # Remotely log in to server
+</code></pre></div></div>
+
+<p>I was prompted to enter my password, and then I was in! I could now pull the repository to the
+Linux server:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir &lt;directory-name&gt;        # Make directory for git repository
+chmod 2755 public_html        # Restrict write access to owner
+cd &lt;directory-name&gt;
+git clone &lt;url-to-repository&gt; # Clone repository
+chmod -R 700 .git             # Restrict access to .git to owner
+cd ..
+</code></pre></div></div>
+
+<p>If you set your repository to public, <code class="language-plaintext highlighter-rouge">git clone</code> will simply clone the repository. If it was
+private, then you will need to authenticate your Github account. Enter your username as usual, but
+you will need to
+<a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens">generate a personal access token</a>
+to use as your password.</p>
+
+<p>Now to host your website on the University of Waterloo server:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir public_html                          # Make directory for website
+chmod 2755 public_html                     # Restrict write access to owner
+cp -r &lt;directory-name&gt;/_site/* public_html # Copy contents of _site folder to public_html
+</code></pre></div></div>
+
+<p>Then the website is now visible at <code class="language-plaintext highlighter-rouge">https://math.uwaterloo.ca/~&lt;UWuserid&gt;</code>!</p>
+
+<h3 id="adding-content">Adding content</h3>
+
+<p>Jekyll has a fairly comprehensive
+<a href="https://jekyllrb.com/docs/step-by-step/01-setup/">step-by-step tutorial</a> on getting a blog up and
+running.</p>
+
+<p>After making changes or adding content to your website, commit your changes to the local Git
+repository as above. Then you have to push it to Github using the command
+<code class="language-plaintext highlighter-rouge">git push &lt;remote&gt; &lt;branch&gt;</code>. After that, <code class="language-plaintext highlighter-rouge">ssh</code> into the university server and use the <code class="language-plaintext highlighter-rouge">git pull</code>
+command to automatically fetch and then merge the Github branch into the branch on the university
+server.</p>
+
+		
+	</body>
+</html>
