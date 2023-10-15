@@ -1,5 +1,5 @@
 - name: home
-  link: /
+  link: /index.html
 - name: resources
   link: /resources.html
 - name: blog
