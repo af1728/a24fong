@@ -1,6 +1,8 @@
 ---
 layout: post
 title: How I Made My Personal Website
+tag: tutorial
+tag: website
 ---
 
 The goal of this post is to walk through, from start to finish, how a graduate student at the
@@ -12,7 +14,9 @@ you can alter the styling, add scripts, and add other functionality significantl
 offered by template-based website builders, and is the way to go if you are comfortable using HTML
 and want to make use of its blogging features.
 
-I used a Windows device, but the steps should not vary wildly across operating systems.
+I will try to make this tutorial as generic as possible, but the hosting instructions is (as far as
+I know) specific to Waterloo. I also used a Windows device, but the steps should not vary wildly
+across operating systems.
 
 ### Setup
 
@@ -36,7 +40,8 @@ following content:
 
 Then you can create a simple webpage in HTML, and name it `index.html` within **website**.
 ([MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/HTML) is a very helpful resource for
-learning HTML).
+learning HTML). Note: this is the file name that all web browsers look for unless the filename is
+indicated in the URL.
 
 Next we navigate to **website** in Terminal.
 
@@ -103,15 +108,14 @@ your commits are pushed to the server!
 
 ### Hosting the website at the university Linux server
 
-Now we need to remotely log into the University of Waterloo server to host the website.
+Now we need to log on to our Unix account to host the website.
 
     ssh <UWuserid>@linux.math.uwaterloo.ca # Remotely log in to server
 
 Enter your WatIAM password, and then you will be in the faculty server! We can now pull the
 repository to the Linux server:
 
-	mkdir <directory-name>        # Make directory for git repository
-	chmod 2755 public_html        # Restrict write access to owner
+	mkdir <directory-name>        # Create directory for git repository
 	cd <directory-name>
 	git clone <url-to-repository> # Clone repository
     chmod -R 700 .git             # Restrict access to .git to owner
@@ -125,12 +129,17 @@ to use as your password.
 
 Now to host your website on the University of Waterloo server:
 
-    mkdir public_html                          # Make directory for website
+    mkdir public_html                          # Create directory for website
 	chmod 2755 public_html                     # Restrict write access to owner
 	cp -r <directory-name>/_site/* public_html # Copy contents of _site folder to public_html
+	
+To view the list of files with permissions, use the command `ls -l`. The permissions in front of
+your **public_html** folder should read `drwxr-sr-x`.
 
 You should see your website at `https://math.uwaterloo.ca/~<UWuserid>`. Moreover, the website should
 look identical to the one we built and served locally.
+
+Type `logout` to sever your connection to the server.
 
 ### Adding content
 
@@ -140,6 +149,6 @@ running.
 
 After making changes or adding content to the website, we can commit our changes to the local Git
 repository as above. Then we have to push it to Github using the command
-`git push <remote> <branch>`. After that, `ssh` into the university server and use the `git pull`
-command to automatically fetch and then merge the Github branch into the branch on the university
-server.
+`git push origin main`. After that, `ssh` into the university server and use the
+`git pull origin main` command to automatically fetch and then merge the Github branch into the
+branch on the university server.

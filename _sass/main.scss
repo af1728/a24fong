@@ -1,0 +1,120 @@
+/* Common: Global Reset */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+	background-color: #1f3d35; /* bbbg */
+	font-family: helvetica, arial, clean, sans-serif; /* font-size left as medium (relative) for accessibility. */
+	font-size: 110%;
+	width: 42em;
+	margin: 3em auto 2em auto;
+	line-height: 1.5;
+	/* Minimum value of 1.5 used for line-height for main paragraph content. This will help people experiencing low vision
+	conditions, as well as people with cognitive concerns such as Dyslexia. If the page is zoomed to increase the text size, using
+	a unitless value ensures that the line height will scale proportionately. */
+	color: #f8f8f2; /* bbfg */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 100%
+}
+
+h2 {
+	margin-bottom: 1em;
+}
+
+p {
+	margin: 1em 0;
+}
+
+a {
+	color: #50fa7b; /* bbgreen */
+}
+
+a:hover {
+	color: #f8f8f2; /* bbfg */
+}
+
+a:visited {
+	color: #ffa8d9;
+	/* bbpink but lighter to ensure that the contrast ratio between text and background the text is placed over is high enough that
+	people experiencing low vision conditions will be able to read the content of the page. */
+}
+
+ul {
+	list-style-type: none;
+	margin-bottom: 2em;
+}
+
+    ul li {
+		line-height: 1.75;
+		/* Minimum value of 1.5 used for line-height for main paragraph content. This will help people experiencing low vision
+	    conditions, as well as people with cognitive concerns such as Dyslexia. If the page is zoomed to increase the text size, using
+	    a unitless value ensures that the line height will scale proportionately. */
+	}
+
+header,
+nav {
+	color: #ffb8b8;
+	/* bbred but lighter to ensure that the contrast ratio between text and background the text is placed over is high enough that
+	people experiencing low vision conditions will be able to read the content of the page. */
+	font-weight: bold;
+}
+
+nav {
+	margin-bottom: 2em;
+}
+
+    nav a {
+		color: #a7d2c7;
+		/* bbcomment but lighter to ensure that the contrast ratio between text and background the text is placed over is high enough
+	    that people experiencing low vision conditions will be able to read the content of the page. */
+		text-decoration: none;
+	}
+
+.meta {
+	color: #a7d2c7;
+	/* bbcomment but lighter to ensure that the contrast ratio between text and background the text is placed over is high enough
+	that people experiencing low vision conditions will be able to read the content of the page. */
+}
+
+footer {
+	font-size: 80%;
+	color: #a7d2c7;
+	/* bbcomment but lighter to ensure that the contrast ratio between text and background the text is placed over is high enough
+	that people experiencing low vision conditions will be able to read the content of the page. */
+	border-top: 4px solid #498d7d;
+	/* bbcl but lighter to ensure that the contrast ratio between graphical objects and background the text is placed over is high
+	enough that people experiencing low vision conditions will be able to read the content of the page. */
+}
+
+address {
+	/*float: left;*/
+	margin-right: 3em;
+}
+
+/*
+Blog
+*/
+
+ul.posts span {
+	color: #a7d2c7;
+	/* bbcomment but lighter to ensure that the contrast ratio between text and background the text is placed over is high enough
+    people experiencing low vision conditions will be able to read the content of the page. */
+	font-family: Monaco, "Courier New", monospace;
+	font-size: 80%;
+}
+
+hr {
+	border-top: 4px solid #498d7d;
+	/* bbcl but lighter to ensure that the contrast ratio between graphical objects and background the text is placed over is high
+	enough that people experiencing low vision conditions will be able to read the content of the page. */
+}
