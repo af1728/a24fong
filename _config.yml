@@ -1,2 +1,4 @@
 baseurl: /~a24fong
 # Makes links work with university hosting.
+kramdown:
+    syntax_highlighter: rouge

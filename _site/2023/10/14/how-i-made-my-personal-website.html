@@ -4,14 +4,16 @@
 	    <title>How I Made My Personal Website</title>
 		<meta name="author" content="AJ Fong" />
 		<link rel="stylesheet" href="/~a24fong/assets/css/styles.css">
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<!-- Tells mobile browsers that they should set the width of the viewport to the device width, and scale the document to 100%
+		of its intended size, which shows the document at the mobile-optimized size that you intended. -->
 	</head>
 	<body>
-	
-	    <header>
-            <h1>AJ Fong</h1>
-        </header>
-		
-	    <nav>
+	    <div class="title">
+	        <header>
+                <h1>AJ Fong</h1>
+            </header>
+		    <nav>
     
         <a href="/~a24fong/">home</a>
 		<!-- Makes links work with university hosting. -->
@@ -23,10 +25,12 @@
 		<!-- Makes links work with university hosting. -->
 	
 </nav>
-	    <h2>How I Made My Personal Website</h2>
-<p class="meta">14 Oct 2023</p>
+		</div>
+	    <div id="post">
+    <h2>How I Made My Personal Website</h2>
+    <p class="meta">14 Oct 2023</p>
 
-<p>The goal of this post is to walk through, from start to finish, how a graduate student at the
+    <p>The goal of this post is to walk through, from start to finish, how a graduate student at the
 University of Waterloo (who is, like me, semi-comfortable with coding in principle only) can use
 Jekyll to create a website and host it on the faculty Linux server.</p>
 
@@ -88,9 +92,9 @@ blank space and click ‘Run in Terminal’.</p>
 
 <p>Then we should run the following commands:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jekyll build
-jekyll serve
-</code></pre></div></div>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">jekyll</span><span class="w"> </span><span class="nx">build</span><span class="w">
+</span><span class="n">jekyll</span><span class="w"> </span><span class="nx">serve</span><span class="w">
+</span></code></pre></div></div>
 
 <p>This will produce the website locally and host it on your device. By running these commands after
 any major changes we can see how the website will look when it is ultimately hosted at the
@@ -181,6 +185,7 @@ repository as above. Then we have to push it to Github using the command
 <code class="language-plaintext highlighter-rouge">git pull origin main</code> command to automatically fetch and then merge the Github branch into the
 branch on the university server.</p>
 
+</div>
 		
 	</body>
 </html>

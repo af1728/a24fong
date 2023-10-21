@@ -4,14 +4,16 @@
 	    <title>AJ Fong's Website</title>
 		<meta name="author" content="AJ Fong" />
 		<link rel="stylesheet" href="/~a24fong/assets/css/styles.css">
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<!-- Tells mobile browsers that they should set the width of the viewport to the device width, and scale the document to 100%
+		of its intended size, which shows the document at the mobile-optimized size that you intended. -->
 	</head>
 	<body>
-	
-	    <header>
-            <h1>AJ Fong</h1>
-        </header>
-		
-	    <nav>
+	    <div class="title">
+	        <header>
+                <h1>AJ Fong</h1>
+            </header>
+		    <nav>
     
         <a href="/~a24fong/">home</a>
 		<!-- Makes links work with university hosting. -->
@@ -23,8 +25,9 @@
 		<!-- Makes links work with university hosting. -->
 	
 </nav>
+		</div>
 	    <main>
-    <section>
+    <section class="contact">
 	    <figure>
 		    <img
 		        src="assets/images/fong.png"
@@ -32,22 +35,24 @@
 			    width="200" 
 			    height="200" /><br />
 			<figcaption>
-		        Design made on <a href="https://picrew.me/ja/image_maker/136066">Picrew</a>
+		        <a href="https://picrew.me/ja/image_maker/136066">Design</a>
 		        by <a href="https://www.lucyzhangportfolio.com">Lucy Zhang</a>.
 			</figcaption>
 		</figure>
 		<!-- Enables caption. -->
-        <address>
-            <b>Email:</b> aj dot fong at uwaterloo dot ca<br />
-	        <b>Office:</b> MC 5411<br /><br />
-		</address>
-		<address>
-	        <b>Address:</b><br /><br />
-	        Department of Pure Mathematics<br />
-	        University of Waterloo<br />
-	        Waterloo, Ontario, Canada<br />
-	        N2L 3G1
-        </address>
+		<div class="address">
+            <address>
+                <b>Email:</b> aj dot fong at uwaterloo dot ca<br />
+	            <b>Office:</b> MC 5411<br /><br />
+		    </address>
+		    <address>
+	            <b>Address:</b><br /><br />
+	            Department of Pure Mathematics<br />
+	            University of Waterloo<br />
+	            Waterloo, Ontario, Canada<br />
+	            N2L 3G1
+            </address>
+		</div>
 		<!-- Marks up contact details. -->
     </section>
 	<!-- Groups together a single part of the page that constitutes one single piece or functionality or a theme. -->
@@ -90,7 +95,7 @@
 	</section>
 </main>
 <footer>
-    <p>Please let me know if there are any problems with this website. This page was last updated on 14 October 2023.</p>
+    <p>Please let me know if there are any problems with this website. This page was last updated on 20 October 2023.</p>
 </footer>
 <!-- End content. -->
 		

@@ -4,14 +4,17 @@
 	    <title>{{page.title}}</title>
 		<meta name="author" content="AJ Fong" />
 		<link rel="stylesheet" href="{{site.baseurl}}/assets/css/styles.css">
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<!-- Tells mobile browsers that they should set the width of the viewport to the device width, and scale the document to 100%
+		of its intended size, which shows the document at the mobile-optimized size that you intended. -->
 	</head>
 	<body>
-	
-	    <header>
-            <h1>AJ Fong</h1>
-        </header>
-		
-	    {% include navigation.html %}
+	    <div class="title">
+	        <header>
+                <h1>AJ Fong</h1>
+            </header>
+		    {% include navigation.html %}
+		</div>
 	    {{content}}
 		
 	</body>

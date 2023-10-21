@@ -66,8 +66,10 @@ blank space and click 'Run in Terminal'.
 
 Then we should run the following commands:
 
-    jekyll build
-	jekyll serve
+```powershell
+jekyll build
+jekyll serve
+```
 
 This will produce the website locally and host it on your device. By running these commands after
 any major changes we can see how the website will look when it is ultimately hosted at the

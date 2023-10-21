@@ -1,4 +1,4 @@
-/* Common: Global Reset */
+/* || Common: Global Reset */
 
 html,
 body {
@@ -9,7 +9,6 @@ body {
 	background-color: #1f3d35; /* bbbg */
 	font-family: helvetica, arial, clean, sans-serif; /* font-size left as medium (relative) for accessibility. */
 	font-size: 110%;
-	width: 42em;
 	margin: 3em auto 2em auto;
 	line-height: 1.5;
 	/* Minimum value of 1.5 used for line-height for main paragraph content. This will help people experiencing low vision
@@ -25,6 +24,10 @@ h4,
 h5,
 h6 {
 	font-size: 100%
+}
+
+h1 {
+	margin: 0;
 }
 
 h2 {
@@ -44,8 +47,12 @@ a:hover {
 }
 
 a:visited {
-	color: #ffa8d9;
-	/* bbpink but lighter to ensure that the contrast ratio between text and background the text is placed over is high enough that
+	color: #bd93f9; /* bbpurple */
+}
+
+a:active {
+	color: #ff7575;
+	/* bbred but lighter to ensure that the contrast ratio between text and background the text is placed over is high enough that
 	people experiencing low vision conditions will be able to read the content of the page. */
 }
 
@@ -61,34 +68,37 @@ ul {
 	    a unitless value ensures that the line height will scale proportionately. */
 	}
 
+.title {
+	display: flex;
+	align-items: start;
+	margin-bottom: 2em;
+}
+
 header,
 nav {
-	color: #ffb8b8;
+	color: #ff7575;
 	/* bbred but lighter to ensure that the contrast ratio between text and background the text is placed over is high enough that
 	people experiencing low vision conditions will be able to read the content of the page. */
 	font-weight: bold;
 }
 
-nav {
-	margin-bottom: 2em;
-}
-
     nav a {
-		color: #a7d2c7;
+		color: #61ae9a;
 		/* bbcomment but lighter to ensure that the contrast ratio between text and background the text is placed over is high enough
 	    that people experiencing low vision conditions will be able to read the content of the page. */
 		text-decoration: none;
+		margin-left: 1em;
 	}
 
 .meta {
-	color: #a7d2c7;
+	color: #61ae9a;
 	/* bbcomment but lighter to ensure that the contrast ratio between text and background the text is placed over is high enough
 	that people experiencing low vision conditions will be able to read the content of the page. */
 }
 
 footer {
 	font-size: 80%;
-	color: #a7d2c7;
+	color: #61ae9a;
 	/* bbcomment but lighter to ensure that the contrast ratio between text and background the text is placed over is high enough
 	that people experiencing low vision conditions will be able to read the content of the page. */
 	border-top: 4px solid #498d7d;
@@ -101,12 +111,17 @@ address {
 	margin-right: 3em;
 }
 
-/*
-Blog
-*/
+img,
+picture,
+video {
+	max-width: 100%;
+}
+/* Ensures media is never larger than its responsive container. */
+
+/* || Blog */
 
 ul.posts span {
-	color: #a7d2c7;
+	color: #61ae9a;
 	/* bbcomment but lighter to ensure that the contrast ratio between text and background the text is placed over is high enough
     people experiencing low vision conditions will be able to read the content of the page. */
 	font-family: Monaco, "Courier New", monospace;
@@ -114,7 +129,71 @@ ul.posts span {
 }
 
 hr {
-	border-top: 4px solid #498d7d;
+	border: 2px solid #498d7d;
 	/* bbcl but lighter to ensure that the contrast ratio between graphical objects and background the text is placed over is high
 	enough that people experiencing low vision conditions will be able to read the content of the page. */
+	/* Set to be equal to the footer border-top. */
 }
+
+/* || Posts */
+
+#post ul,
+#post ol {
+	margin-left: 1.35em;
+}
+
+#post code {
+	border: 1px solid #498d7d;
+	/* bbcl but lighter to ensure that the contrast ratio between graphical objects and background the text is placed over is high
+	enough that people experiencing low vision conditions will be able to read the content of the page. */
+	background-color: #36685c; /* bbcl */
+	font-size: 85%;
+	padding: 0 .2em;
+}
+
+#post pre {
+	border: 1px solid #498d7d;
+	/* bbcl but lighter to ensure that the contrast ratio between graphical objects and background the text is placed over is high
+	enough that people experiencing low vision conditions will be able to read the content of the page. */
+	background-color: #36685c; /* bbcl */
+	padding: 0 .4em;
+}
+
+    #post pre code {
+		border: none;
+	}
+
+#post img {
+	max-width: 42em;
+}
+
+#related {
+	margin-top: 2em;
+}
+
+    #related h2 {
+		margin-bottom: 1em;
+	}
+
+/* Media Queries */
+
+@media screen and (min-width: 54em) {
+	body {
+		width: 54em;
+	}
+	
+	.contact {
+    	display: flex;
+	    align-items: center;
+    }
+    
+        .contact > address {
+	    	flex: 1;
+	    }
+
+    .address {
+	    display: flex;
+	    align-items: start;
+    }
+}
+/* Checks for wider screens and implements a multiple-column layoud when we know we have enough screen width to handle it. */
