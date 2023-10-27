@@ -39,7 +39,7 @@ p {
 }
 
 a {
-	color: #50fa7b; /* bbgreen */
+	color: #8be9fd; /* bbcyan */
 }
 
 a:hover {
@@ -76,9 +76,7 @@ ul {
 
 header,
 nav {
-	color: #ff7575;
-	/* bbred but lighter to ensure that the contrast ratio between text and background the text is placed over is high enough that
-	people experiencing low vision conditions will be able to read the content of the page. */
+	color: #50fa7b; /* bbgreen */
 	font-weight: bold;
 }
 

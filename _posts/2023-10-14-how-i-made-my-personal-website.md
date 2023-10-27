@@ -36,7 +36,9 @@ you like). To ensure the website works on the servers provided by the University
 will need to set the base url in a configuration file. Create `_config.yml` in **website** with the
 following content:
 
-    baseurl: /~<UWuserid>
+```yaml
+baseurl: /~<UWuserid>
+```
 
 Then you can create a simple webpage in HTML, and name it `index.html` within **website**.
 ([MDN Web Docs](https://developer.mozilla.org/en-US/docs/Learn/HTML) is a very helpful resource for
@@ -84,12 +86,14 @@ As mentioned previously, we will use [Github](https://github.com/) to track chan
 and sync it with the University of Waterloo servers. Switching to Terminal, we execute the
 following commands:
 
-    cd _site                       # Enter _site folder
+```powershell
+cd _site                       # Enter _site folder
 	
-	# Build github repo
-	git init                       # Create a Git repository skeleton
-	git add --all                  # Begin tracking all files in your directory
-	git commit -m "Initial commit" # Commit changes
+# Build github repo
+git init                       # Create a Git repository skeleton
+git add --all                  # Begin tracking all files in your directory
+git commit -m "Initial commit" # Commit changes
+```
 
 This initialises a local git repository on your device. Next we need to connect the local
 repository to the University.
@@ -101,9 +105,11 @@ instructions if you set it to private. You can leave everything else as default.
 Once this is finished, link the remote repository to the local one by returning to Terminal and
 running the commands suggested by Github:
 
-    git remote add origin <url-to-repository>
-	git branch -M main
-	git push -u origin main
+```powershell
+git remote add origin <url-to-repository>
+git branch -M main
+git push -u origin main
+```
 
 You will be prompted to log in to Github and authorise git-ecosystem to access the account. Now
 your commits are pushed to the server!
@@ -112,16 +118,20 @@ your commits are pushed to the server!
 
 Now we need to log on to our Unix account to host the website.
 
-    ssh <UWuserid>@linux.math.uwaterloo.ca # Remotely log in to server
+```powershell
+ssh <UWuserid>@linux.math.uwaterloo.ca # Remotely log in to server
+```
 
 Enter your WatIAM password, and then you will be in the faculty server! We can now pull the
 repository to the Linux server:
 
-	mkdir <directory-name>        # Create directory for git repository
-	cd <directory-name>
-	git clone <url-to-repository> # Clone repository
-    chmod -R 700 .git             # Restrict access to .git to owner
-	cd ..
+```powershell
+mkdir <directory-name>        # Create directory for git repository
+cd <directory-name>
+git clone <url-to-repository> # Clone repository
+chmod -R 700 .git             # Restrict access to .git to owner
+cd ..
+```
 
 If you set your repository to public, `git clone` will simply clone the repository. If it was
 private, then you will need to authenticate your Github account. You can enter your username as
@@ -131,9 +141,11 @@ to use as your password.
 
 Now to host your website on the University of Waterloo server:
 
-    mkdir public_html                          # Create directory for website
-	chmod 2755 public_html                     # Restrict write access to owner
-	cp -r <directory-name>/_site/* public_html # Copy contents of _site folder to public_html
+```powershell
+mkdir public_html                          # Create directory for website
+chmod 2755 public_html                     # Restrict write access to owner
+cp -r <directory-name>/_site/* public_html # Copy contents of _site folder to public_html
+```
 	
 To view the list of files with permissions, use the command `ls -l`. The permissions in front of
 your **public_html** folder should read `drwxr-sr-x`.

@@ -5,8 +5,8 @@
 		<meta name="author" content="AJ Fong" />
 		<link rel="stylesheet" href="/~a24fong/assets/css/styles.css">
 		<meta name="viewport" content="width=device-width,initial-scale=1" />
-		<!-- Tells mobile browsers that they should set the width of the viewport to the device width, and scale the document to 100%
-		of its intended size, which shows the document at the mobile-optimized size that you intended. -->
+		<!-- Tells mobile browsers that they should set the width of the viewport to the device width, and scale the document to
+		100% of its intended size, which shows the document at the mobile-optimized size that you intended. -->
 	</head>
 	<body>
 	    <div class="title">
@@ -61,7 +61,7 @@ you like). To ensure the website works on the servers provided by the University
 will need to set the base url in a configuration file. Create <code class="language-plaintext highlighter-rouge">_config.yml</code> in <strong>website</strong> with the
 following content:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>baseurl: /~&lt;UWuserid&gt;
+<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">baseurl</span><span class="pi">:</span> <span class="s">/~&lt;UWuserid&gt;</span>
 </code></pre></div></div>
 
 <p>Then you can create a simple webpage in HTML, and name it <code class="language-plaintext highlighter-rouge">index.html</code> within <strong>website</strong>.
@@ -109,13 +109,13 @@ one is <strong>_site</strong> which stores the generated website.</p>
 and sync it with the University of Waterloo servers. Switching to Terminal, we execute the
 following commands:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd _site                       # Enter _site folder
-
-# Build github repo
-git init                       # Create a Git repository skeleton
-git add --all                  # Begin tracking all files in your directory
-git commit -m "Initial commit" # Commit changes
-</code></pre></div></div>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">cd</span><span class="w"> </span><span class="nx">_site</span><span class="w">                       </span><span class="c"># Enter _site folder</span><span class="w">
+	
+</span><span class="c"># Build github repo</span><span class="w">
+</span><span class="n">git</span><span class="w"> </span><span class="nx">init</span><span class="w">                       </span><span class="c"># Create a Git repository skeleton</span><span class="w">
+</span><span class="n">git</span><span class="w"> </span><span class="nx">add</span><span class="w"> </span><span class="nt">--all</span><span class="w">                  </span><span class="c"># Begin tracking all files in your directory</span><span class="w">
+</span><span class="n">git</span><span class="w"> </span><span class="nx">commit</span><span class="w"> </span><span class="nt">-m</span><span class="w"> </span><span class="s2">"Initial commit"</span><span class="w"> </span><span class="c"># Commit changes</span><span class="w">
+</span></code></pre></div></div>
 
 <p>This initialises a local git repository on your device. Next we need to connect the local
 repository to the University.</p>
@@ -127,10 +127,10 @@ instructions if you set it to private. You can leave everything else as default.
 <p>Once this is finished, link the remote repository to the local one by returning to Terminal and
 running the commands suggested by Github:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add origin &lt;url-to-repository&gt;
-git branch -M main
-git push -u origin main
-</code></pre></div></div>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">git</span><span class="w"> </span><span class="nx">remote</span><span class="w"> </span><span class="nx">add</span><span class="w"> </span><span class="nx">origin</span><span class="w"> </span><span class="err">&lt;</span><span class="nx">url-to-repository</span><span class="err">&gt;</span><span class="w">
+</span><span class="n">git</span><span class="w"> </span><span class="nx">branch</span><span class="w"> </span><span class="nt">-M</span><span class="w"> </span><span class="nx">main</span><span class="w">
+</span><span class="n">git</span><span class="w"> </span><span class="nx">push</span><span class="w"> </span><span class="nt">-u</span><span class="w"> </span><span class="nx">origin</span><span class="w"> </span><span class="nx">main</span><span class="w">
+</span></code></pre></div></div>
 
 <p>You will be prompted to log in to Github and authorise git-ecosystem to access the account. Now
 your commits are pushed to the server!</p>
@@ -139,18 +139,18 @@ your commits are pushed to the server!</p>
 
 <p>Now we need to log on to our Unix account to host the website.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh &lt;UWuserid&gt;@linux.math.uwaterloo.ca # Remotely log in to server
-</code></pre></div></div>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ssh</span><span class="w"> </span><span class="err">&lt;</span><span class="nx">UWuserid</span><span class="err">&gt;@</span><span class="nx">linux.math.uwaterloo.ca</span><span class="w"> </span><span class="c"># Remotely log in to server</span><span class="w">
+</span></code></pre></div></div>
 
 <p>Enter your WatIAM password, and then you will be in the faculty server! We can now pull the
 repository to the Linux server:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir &lt;directory-name&gt;        # Create directory for git repository
-cd &lt;directory-name&gt;
-git clone &lt;url-to-repository&gt; # Clone repository
-chmod -R 700 .git             # Restrict access to .git to owner
-cd ..
-</code></pre></div></div>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mkdir</span><span class="w"> </span><span class="err">&lt;</span><span class="nx">directory-name</span><span class="err">&gt;</span><span class="w">        </span><span class="c"># Create directory for git repository</span><span class="w">
+</span><span class="n">cd</span><span class="w"> </span><span class="err">&lt;</span><span class="nx">directory-name</span><span class="err">&gt;</span><span class="w">
+</span><span class="n">git</span><span class="w"> </span><span class="nx">clone</span><span class="w"> </span><span class="err">&lt;</span><span class="nx">url-to-repository</span><span class="err">&gt;</span><span class="w"> </span><span class="c"># Clone repository</span><span class="w">
+</span><span class="n">chmod</span><span class="w"> </span><span class="nt">-R</span><span class="w"> </span><span class="nx">700</span><span class="w"> </span><span class="o">.</span><span class="nf">git</span><span class="w">             </span><span class="c"># Restrict access to .git to owner</span><span class="w">
+</span><span class="n">cd</span><span class="w"> </span><span class="o">..</span><span class="w">
+</span></code></pre></div></div>
 
 <p>If you set your repository to public, <code class="language-plaintext highlighter-rouge">git clone</code> will simply clone the repository. If it was
 private, then you will need to authenticate your Github account. You can enter your username as
@@ -160,10 +160,10 @@ to use as your password.</p>
 
 <p>Now to host your website on the University of Waterloo server:</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir public_html                          # Create directory for website
-chmod 2755 public_html                     # Restrict write access to owner
-cp -r &lt;directory-name&gt;/_site/* public_html # Copy contents of _site folder to public_html
-</code></pre></div></div>
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mkdir</span><span class="w"> </span><span class="nx">public_html</span><span class="w">                          </span><span class="c"># Create directory for website</span><span class="w">
+</span><span class="n">chmod</span><span class="w"> </span><span class="nx">2755</span><span class="w"> </span><span class="nx">public_html</span><span class="w">                     </span><span class="c"># Restrict write access to owner</span><span class="w">
+</span><span class="n">cp</span><span class="w"> </span><span class="nt">-r</span><span class="w"> </span><span class="err">&lt;</span><span class="nx">directory-name</span><span class="err">&gt;</span><span class="nx">/_site/</span><span class="o">*</span><span class="w"> </span><span class="nx">public_html</span><span class="w"> </span><span class="c"># Copy contents of _site folder to public_html</span><span class="w">
+</span></code></pre></div></div>
 
 <p>To view the list of files with permissions, use the command <code class="language-plaintext highlighter-rouge">ls -l</code>. The permissions in front of
 your <strong>public_html</strong> folder should read <code class="language-plaintext highlighter-rouge">drwxr-sr-x</code>.</p>
