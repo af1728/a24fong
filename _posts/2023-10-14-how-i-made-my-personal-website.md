@@ -116,7 +116,10 @@ your commits are pushed to the server!
 
 ### Hosting the website at the university Linux server
 
-Now we need to log on to our Unix account to host the website.
+Now we need to log on to our Unix account to host the website. To connect from off-campus, you will
+need to run the [campus
+VPN](https://uwaterloo.atlassian.net/wiki/spaces/ISTSERV/pages/42588307544/About+the+Virtual+Private+Network+VPN).
+Then remotely log into the server:
 
 ```powershell
 ssh <UWuserid>@linux.math.uwaterloo.ca # Remotely log in to server
