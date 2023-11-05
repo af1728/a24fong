@@ -168,4 +168,5 @@ After making changes or adding content to the website, we can commit our changes
 repository as above. Then we have to push it to Github using the command
 `git push origin main`. After that, `ssh` into the university server and use the
 `git pull origin main` command to automatically fetch and then merge the Github branch into the
-branch on the university server.
+branch on the university server. To replace the existing website with the updated one, use the
+command `cp -rf <directory-name>/_site/* public_html`.

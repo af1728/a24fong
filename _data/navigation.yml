@@ -1,5 +1,7 @@
 - name: home
   link: /
+- name: talks
+  link: /talks.html
 - name: resources
   link: /resources.html
 - name: blog

@@ -18,6 +18,9 @@
         <a href="/~a24fong/">home</a>
 		<!-- Makes links work with university hosting. -->
 	
+        <a href="/~a24fong/talks.html">talks</a>
+		<!-- Makes links work with university hosting. -->
+	
         <a href="/~a24fong/resources.html">resources</a>
 		<!-- Makes links work with university hosting. -->
 	
@@ -186,7 +189,8 @@ running.</p>
 repository as above. Then we have to push it to Github using the command
 <code class="language-plaintext highlighter-rouge">git push origin main</code>. After that, <code class="language-plaintext highlighter-rouge">ssh</code> into the university server and use the
 <code class="language-plaintext highlighter-rouge">git pull origin main</code> command to automatically fetch and then merge the Github branch into the
-branch on the university server.</p>
+branch on the university server. To replace the existing website with the updated one, use the
+command <code class="language-plaintext highlighter-rouge">cp -rf &lt;directory-name&gt;/_site/* public_html</code>.</p>
 
 </div>
 		
