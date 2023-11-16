@@ -146,11 +146,11 @@ Then remotely log into the server:</p>
 </span></code></pre></div></div>
 
 <p>Enter your WatIAM password, and then you will be in the faculty server! We can now pull the
-repository to the Linux server:</p>
+repository to the Linux server (note that the name on the Github repository will be the name of
+your directory):</p>
 
-<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mkdir</span><span class="w"> </span><span class="err">&lt;</span><span class="nx">directory-name</span><span class="err">&gt;</span><span class="w">        </span><span class="c"># Create directory for git repository</span><span class="w">
-</span><span class="n">cd</span><span class="w"> </span><span class="err">&lt;</span><span class="nx">directory-name</span><span class="err">&gt;</span><span class="w">
-</span><span class="n">git</span><span class="w"> </span><span class="nx">clone</span><span class="w"> </span><span class="err">&lt;</span><span class="nx">url-to-repository</span><span class="err">&gt;</span><span class="w"> </span><span class="c"># Clone repository</span><span class="w">
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">git</span><span class="w"> </span><span class="nx">clone</span><span class="w"> </span><span class="err">&lt;</span><span class="nx">url-to-repository</span><span class="err">&gt;</span><span class="w"> </span><span class="c"># Clone repository</span><span class="w">
+</span><span class="n">cd</span><span class="w"> </span><span class="err">&lt;</span><span class="nx">repository-name</span><span class="err">&gt;</span><span class="w">
 </span><span class="n">chmod</span><span class="w"> </span><span class="nt">-R</span><span class="w"> </span><span class="nx">700</span><span class="w"> </span><span class="o">.</span><span class="nf">git</span><span class="w">             </span><span class="c"># Restrict access to .git to owner</span><span class="w">
 </span><span class="n">cd</span><span class="w"> </span><span class="o">..</span><span class="w">
 </span></code></pre></div></div>

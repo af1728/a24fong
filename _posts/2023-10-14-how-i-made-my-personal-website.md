@@ -126,12 +126,12 @@ ssh <UWuserid>@linux.math.uwaterloo.ca # Remotely log in to server
 ```
 
 Enter your WatIAM password, and then you will be in the faculty server! We can now pull the
-repository to the Linux server:
+repository to the Linux server (note that the name on the Github repository will be the name of
+your directory):
 
 ```powershell
-mkdir <directory-name>        # Create directory for git repository
-cd <directory-name>
 git clone <url-to-repository> # Clone repository
+cd <repository-name>
 chmod -R 700 .git             # Restrict access to .git to owner
 cd ..
 ```
