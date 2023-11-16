@@ -1,4 +1,9 @@
-var Confessions = [
+const Confessions = [
+"I've never understood the language of schemes.",
+"I don't understand sheaves and their cohomology."
+];
+
+var Confessions1 = [
   "I've never understood \"resolution of singularities\".",
   "I don't understand the Koszul condition.",
   "I don't yet appreciate infinity-algebras.",
