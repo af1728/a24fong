@@ -145,9 +145,9 @@ to use as your password.
 Now to host your website on the University of Waterloo server:
 
 ```powershell
-mkdir public_html                          # Create directory for website
-chmod 2755 public_html                     # Restrict write access to owner
-cp -r <directory-name>/_site/* public_html # Copy contents of _site folder to public_html
+mkdir public_html                                # Create directory for website
+chmod 2755 public_html                           # Restrict write access to owner
+rsync -avuP <directory-name>/_site/* public_html # Synchronises contents of _site folder with public_html
 ```
 	
 To view the list of files with permissions, use the command `ls -l`. The permissions in front of
@@ -168,5 +168,5 @@ After making changes or adding content to the website, we can commit our changes
 repository as above. Then we have to push it to Github using the command
 `git push origin main`. After that, `ssh` into the university server and use the
 `git pull origin main` command to automatically fetch and then merge the Github branch into the
-branch on the university server. To replace the existing website with the updated one, use the
-command `cp -rf <directory-name>/_site/* public_html`.
+branch on the university server. You can use the same command as above to replace the existing
+website with the updated one.

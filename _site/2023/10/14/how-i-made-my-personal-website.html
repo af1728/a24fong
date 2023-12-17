@@ -163,9 +163,9 @@ to use as your password.</p>
 
 <p>Now to host your website on the University of Waterloo server:</p>
 
-<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mkdir</span><span class="w"> </span><span class="nx">public_html</span><span class="w">                          </span><span class="c"># Create directory for website</span><span class="w">
-</span><span class="n">chmod</span><span class="w"> </span><span class="nx">2755</span><span class="w"> </span><span class="nx">public_html</span><span class="w">                     </span><span class="c"># Restrict write access to owner</span><span class="w">
-</span><span class="n">cp</span><span class="w"> </span><span class="nt">-r</span><span class="w"> </span><span class="err">&lt;</span><span class="nx">directory-name</span><span class="err">&gt;</span><span class="nx">/_site/</span><span class="o">*</span><span class="w"> </span><span class="nx">public_html</span><span class="w"> </span><span class="c"># Copy contents of _site folder to public_html</span><span class="w">
+<div class="language-powershell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">mkdir</span><span class="w"> </span><span class="nx">public_html</span><span class="w">                                </span><span class="c"># Create directory for website</span><span class="w">
+</span><span class="n">chmod</span><span class="w"> </span><span class="nx">2755</span><span class="w"> </span><span class="nx">public_html</span><span class="w">                           </span><span class="c"># Restrict write access to owner</span><span class="w">
+</span><span class="n">rsync</span><span class="w"> </span><span class="nt">-avuP</span><span class="w"> </span><span class="err">&lt;</span><span class="nx">directory-name</span><span class="err">&gt;</span><span class="nx">/_site/</span><span class="o">*</span><span class="w"> </span><span class="nx">public_html</span><span class="w"> </span><span class="c"># Synchronises contents of _site folder with public_html</span><span class="w">
 </span></code></pre></div></div>
 
 <p>To view the list of files with permissions, use the command <code class="language-plaintext highlighter-rouge">ls -l</code>. The permissions in front of
@@ -186,8 +186,8 @@ running.</p>
 repository as above. Then we have to push it to Github using the command
 <code class="language-plaintext highlighter-rouge">git push origin main</code>. After that, <code class="language-plaintext highlighter-rouge">ssh</code> into the university server and use the
 <code class="language-plaintext highlighter-rouge">git pull origin main</code> command to automatically fetch and then merge the Github branch into the
-branch on the university server. To replace the existing website with the updated one, use the
-command <code class="language-plaintext highlighter-rouge">cp -rf &lt;directory-name&gt;/_site/* public_html</code>.</p>
+branch on the university server. You can use the same command as above to replace the existing
+website with the updated one.</p>
 
 </div>
 		
