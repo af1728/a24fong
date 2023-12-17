@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	    <title>{{page.title}}</title>
+		<meta name="author" content="AJ Fong" />
+		<link rel="stylesheet" href="{{site.baseurl}}/assets/css/styles.css">
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<!-- Tells mobile browsers that they should set the width of the viewport to the device width, and scale the document to
+		100% of its intended size, which shows the document at the mobile-optimized size that you intended. -->
+		<script>
+		    document.addEventListener("DOMContentLoaded", () => {
+			    const clock = document.getElementById('time');
+			    
+			    function time() {
+			        var d = new Date();
+			    	var s = d.getSeconds();
+				    var m = d.getMinutes();
+				    var h = d.getHours();
+				    clock.textContent = ("0" + h).substr(-2) + ":" + ("0" + m).substr(-2) + ":" + ("0" + s).substr(-2);
+			    }
+			    
+			    setInterval(time, 1000);
+				
+				const centre = document.querySelector(".centre");
+				const subject = document.querySelector(".subject");
+				const paper = document.querySelector(".paper");
+				const start = document.querySelector(".start");
+				const finish = document.querySelector(".finish");
+				
+				const centreInput = document.querySelector(".centreInput");
+				const subjectInput = document.querySelector(".subjectInput");
+				const paperInput = document.querySelector(".paperInput");
+				const startInput = document.querySelector(".startInput");
+				const finishInput = document.querySelector(".finishInput");
+				const submit = document.querySelector(".submit");
+				
+				function inputDetails() {
+				    centre.textContent = centreInput.value;
+					subject.textContent = subjectInput.value;
+					paper.textContent = paperInput.value;
+					start.textContent = "Starting time: " + startInput.value;
+					finish.textContent = "Finishing time: " + finishInput.value;
+				}
+				
+				submit.addEventListener("click", inputDetails);
+			});
+		</script>
+	</head>
+	<body>
+	    <div class="title">
+	        <header>
+                <h1>AJ Fong</h1>
+            </header>
+		    {% include navigation.html %}
+		</div>
+	    {{content}}
+		
+	</body>
+</html>

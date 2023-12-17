@@ -1,0 +1,43 @@
+---
+layout: exam_clock
+title: Test Clock
+---
+<h2>Exam Clock</h2>
+<section>
+<p>This is a Javascript-based tool that displays the time and test information on one screen.</p>
+<p>To use: Enter the test information in the following form and click the Display button. Scroll all the way to the bottom (the
+tool has been designed to take up the entire height of the screen).</p>
+</section>
+
+<section>
+    <ul role="list">
+        <li><label for="centre">Room:</label> <input type="text" id="centre" name="centre_number" class="centreInput" /></li>
+		<li><label for="subject">Subject:</label> <input type="text" id="subject" name="subject_title" class="subjectInput" /></li>
+		<li><label for="paper">Paper:</label> <input type="text" id="paper" name="paper_title" class="paperInput" /></li>
+		<li><label for="start">Starting time:</label> <input type="time" id="start" name="starting_time" class="startInput" /></li>
+		<li><label for="finish">Finishing time:</label> <input type="time" id="finish" name="finishing_time" class="finishInput" /></li>
+		<li><button class="submit">Display</button></li>
+	</ul>
+</section>
+<hr />
+
+<div class="screenHeight"><div id="examTool">
+    <div id="time"></div>
+    
+    <div id="examInformation">
+        <div id="examTimes">
+	        <ul role="list">
+	            <li><span class="start"></span></li>
+    		    <li><span class="finish"></span></li>
+	    	</ul>
+        </div>
+        
+        <div id="examDetails">
+	        <ul role="list">
+	            <li><span class="centre"></span></li>
+		        <li><span class="subject"></span></li>
+    			<li><span class="paper"></span></li>
+	    	</ul>
+        </div>
+    </div>
+</div></div>

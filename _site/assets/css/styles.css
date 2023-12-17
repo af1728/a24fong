@@ -368,5 +368,27 @@ hr {
 .highlight .il {
   color: #009999;
 } /* Literal.Number.Integer.Long */
+.screenHeight {
+  height: 100vh;
+}
+
+#time {
+  font-size: 1300%;
+  text-align: center;
+  padding-top: 10vh;
+}
+
+#examInformation {
+  display: flex;
+}
+
+#examTimes {
+  flex: 1;
+}
+
+#examDetails {
+  text-align: right;
+  flex: 1;
+}
 
 /*# sourceMappingURL=styles.css.map */

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	    <title>Test Clock</title>
+		<meta name="author" content="AJ Fong" />
+		<link rel="stylesheet" href="/~a24fong/assets/css/styles.css">
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<!-- Tells mobile browsers that they should set the width of the viewport to the device width, and scale the document to
+		100% of its intended size, which shows the document at the mobile-optimized size that you intended. -->
+		<script>
+		    document.addEventListener("DOMContentLoaded", () => {
+			    const clock = document.getElementById('time');
+			    
+			    function time() {
+			        var d = new Date();
+			    	var s = d.getSeconds();
+				    var m = d.getMinutes();
+				    var h = d.getHours();
+				    clock.textContent = ("0" + h).substr(-2) + ":" + ("0" + m).substr(-2) + ":" + ("0" + s).substr(-2);
+			    }
+			    
+			    setInterval(time, 1000);
+				
+				const centre = document.querySelector(".centre");
+				const subject = document.querySelector(".subject");
+				const paper = document.querySelector(".paper");
+				const start = document.querySelector(".start");
+				const finish = document.querySelector(".finish");
+				
+				const centreInput = document.querySelector(".centreInput");
+				const subjectInput = document.querySelector(".subjectInput");
+				const paperInput = document.querySelector(".paperInput");
+				const startInput = document.querySelector(".startInput");
+				const finishInput = document.querySelector(".finishInput");
+				const submit = document.querySelector(".submit");
+				
+				function inputDetails() {
+				    centre.textContent = centreInput.value;
+					subject.textContent = subjectInput.value;
+					paper.textContent = paperInput.value;
+					start.textContent = "Starting time: " + startInput.value;
+					finish.textContent = "Finishing time: " + finishInput.value;
+				}
+				
+				submit.addEventListener("click", inputDetails);
+			});
+		</script>
+	</head>
+	<body>
+	    <div class="title">
+	        <header>
+                <h1>AJ Fong</h1>
+            </header>
+		    <nav>
+    
+        <a href="/~a24fong/">home</a>
+		<!-- Makes links work with university hosting. -->
+	
+        <a href="/~a24fong/resources.html">resources</a>
+		<!-- Makes links work with university hosting. -->
+	
+        <a href="/~a24fong/blog.html">blog</a>
+		<!-- Makes links work with university hosting. -->
+	
+</nav>
+		</div>
+	    <h2>Exam Clock</h2>
+<section>
+<p>This is a Javascript-based tool that displays the time and test information on one screen.</p>
+<p>To use: Enter the test information in the following form and click the Display button. Scroll all the way to the bottom (the
+tool has been designed to take up the entire height of the screen).</p>
+</section>
+
+<section>
+    <ul role="list">
+        <li><label for="centre">Room:</label> <input type="text" id="centre" name="centre_number" class="centreInput" /></li>
+		<li><label for="subject">Subject:</label> <input type="text" id="subject" name="subject_title" class="subjectInput" /></li>
+		<li><label for="paper">Paper:</label> <input type="text" id="paper" name="paper_title" class="paperInput" /></li>
+		<li><label for="start">Starting time:</label> <input type="time" id="start" name="starting_time" class="startInput" /></li>
+		<li><label for="finish">Finishing time:</label> <input type="time" id="finish" name="finishing_time" class="finishInput" /></li>
+		<li><button class="submit">Display</button></li>
+	</ul>
+</section>
+<hr />
+
+<div class="screenHeight"><div id="examTool">
+    <div id="time"></div>
+    
+    <div id="examInformation">
+        <div id="examTimes">
+	        <ul role="list">
+	            <li><span class="start"></span></li>
+    		    <li><span class="finish"></span></li>
+	    	</ul>
+        </div>
+        
+        <div id="examDetails">
+	        <ul role="list">
+	            <li><span class="centre"></span></li>
+		        <li><span class="subject"></span></li>
+    			<li><span class="paper"></span></li>
+	    	</ul>
+        </div>
+    </div>
+</div></div>
+		
+	</body>
+</html>
