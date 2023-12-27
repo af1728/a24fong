@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+	    <title>Varieties and Their Coordinate Rings</title>
+		<meta name="author" content="AJ Fong" />
+		<link rel="stylesheet" href="/~a24fong/assets/css/styles.css">
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
+		<!-- Tells mobile browsers that they should set the width of the viewport to the device width, and scale the document to
+		100% of its intended size, which shows the document at the mobile-optimized size that you intended. -->
+		<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+	</head>
+	<body>
+	    <div class="title">
+	        <header>
+                <h1>AJ Fong</h1>
+            </header>
+		    <nav>
+    
+        <a href="/~a24fong/">home</a>
+		<!-- Makes links work with university hosting. -->
+	
+        <a href="/~a24fong/seminars.html">seminars</a>
+		<!-- Makes links work with university hosting. -->
+	
+        <a href="/~a24fong/resources.html">resources</a>
+		<!-- Makes links work with university hosting. -->
+	
+        <a href="/~a24fong/blog.html">blog</a>
+		<!-- Makes links work with university hosting. -->
+	
+</nav>
+		</div>
+	    <div id="post">
+    <h2>Varieties and Their Coordinate Rings</h2>
+    <p class="meta">26 Dec 2023</p>
+
+    <p>This post is written in preparation for the <a href="/~a24fong/seminars/schemes.html">Schemes Learning
+Seminar</a> I am organising, and is intended to provide a
+refresher on algebraic varieties and their coordinate rings to generalise to schemes.</p>
+
+<hr />
+
+<h3 id="what-is-a-variety">What is a variety?</h3>
+
+<p>Our ambient space of choice in the study of varieties is the <em>\(n\)-dimensional affine space over
+\(k\)</em>, where \(k\) is a field of arbitrary characteristic, which is simply \(k^n\) as a set.</p>
+
+<p>Now we can begin to define algebraic varieties.</p>
+
+<p><strong>Definition.</strong> An <em>affine algebraic set</em> \(X \subset \mathbb{A}^n\) is the set
+\[
+X = \left\{P \in \mathbb{A}^n \middle| f_\alpha(P) = 0, \alpha \in A\right\}
+\]
+where \(f_\alpha \in k[x_1, \dotsc, x_n]\) are polynomials.</p>
+
+<p>We can equip our algebraic sets with a topology.</p>
+
+<p><strong>Definition.</strong> The <em>Zariski topology of \(\mathbb{A}^n\)</em> is the topology whose closed sets are
+the affine algebraic sets. We equip every affine algebraic set \(X\) in \(\mathbb{A}^n\) with
+the induced topology, and call this the <em>Zariski topology</em> of \(X\).</p>
+
+<p>Now experience has shown that one should also study maps between varieties that preserve the
+structure. To get a meaningful and interesting notion, we will need the local functions (that is,
+maps from our variety to \(k\)); and thus the formal definition of a variety includes what is
+known as the ‘sheaf of local functions’, or the ‘structure sheaf’. (The notion of a set of
+functions forming a sheaf should be understood as requiring the defining property to be a ‘local
+property’ - examples include continuous, differentiable, and analytic functions.)</p>
+
+<p><strong>Definition.</strong> For \(U \subset \mathbb{A}^n\) Zariski open, we define
+\(\mathcal{O}_{\mathbb{A}^n}(U)\) to be the set of functions \(f : U \to k\) such that every
+\(x \in U\) has an open neighbourhood \(V(x)\) on which \(f = \frac{p}{q}\) for polynomials
+\(p, q \in k[x_1, \dotsc, x_n]\) where \(q(y) \neq 0\) for all \(y \in V(x)\).</p>
+
+<p>This set of functions clearly forms a sheaf. It is also easy to see that for any subset (in
+particular, affine algebraic sets) \(X \subset \mathbb{A}^n\), we can get an induced sheaf from
+\(\mathcal{O}_{\mathbb{A}^n}\), in a similar manner to the subspace topology. Thus we finally
+arrive at the following definition.</p>
+
+<p><strong>Definition.</strong> Suppose \(X \subset \mathbb{A}^n\) is an affine algebraic subset together with
+the Zariski topology \(\mathfrak{T}\). We define \(\mathcal{O}_X\) to be the restriction of
+the sheaf \(\mathcal{O}_{\mathbb{A}^n}\) to \(X\). Then the triple \((X, \mathfrak{T},
+\mathcal{O}_X)\), and more generally any topological space with a sheaf of \(k\)-valued
+functions that is isomorphic to this data, is called an <em>affine algebraic variety</em>. The functions
+in \(\mathcal{O}_X(U)\) for any open subset \(U\) are called <em>regular functions</em>.</p>
+
+<p>I remark here that one can similarly define projective algebraic sets and projective varieties in a
+similar manner up to requiring the relevant polynomials to be homogeneous. For brevity, I will
+assume sufficient comfort with these and freely refer to them later.</p>
+
+<hr />
+
+<h3 id="coordinate-rings">Coordinate rings</h3>
+
+<p>We can use Hilbert’s Nullstellensatz to describe rings of regular functions of affine varieties:</p>
+
+<p><strong>Theorem.</strong> If \(X \in \mathbb{A}^n\) is a closed subvariety, then
+\[
+\mathcal{O}_X(X) \simeq k[x_1, \dotsc, x_n]/I(X).
+\]</p>
+
+<p><strong>Definition.</strong> One customarily calls \(k[x_1, \dotsc, x_n]/I(X)\) the <em>coordinate ring</em> of the
+affine variety \(X\), .</p>
+
+<p>The coordinate ring of an affine variety over an algebraically closed field \(k\) satisfies two
+conditions:</p>
+<ol>
+  <li>it is a finitely generated \(k\)-algebra; and</li>
+  <li>it is an integral domain.</li>
+</ol>
+
+<p>It turns out that a ring satisfying these two conditions is the coordinate ring of some variety
+\(X\), and that there is a functor between affine varieties and the opposite of the category of
+rings satisfying the above conditions, given by \(X \mapsto k[x_1, \dotsc, x_n]/I(X)\), which is
+an equivalence of categories.</p>
+
+<p>Hilbert’s Nullstellensatz along with the existence of prime decompositions of radical ideals also
+tells us that prime ideals of \(k[x_1, \dotsc, x_n]/I(X)\) are in bijection with irreducible
+subvarieties of \(X\), and the points of \(X\) are in bijection with maximal ideals.</p>
+
+<p>Taken together, the above results identify affine varietiex \(X\) with the affine schemes
+corresponding to rings satisfying the above conditions. Generalising to any affine scheme
+corresponds to dropping these conditions and only requiring our ring be commutative.</p>
+
+</div>
+		
+	</body>
+</html>

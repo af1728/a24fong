@@ -1,5 +1,7 @@
 - name: home
   link: /
+- name: seminars
+  link: /seminars.html
 - name: resources
   link: /resources.html
 - name: blog
