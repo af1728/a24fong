@@ -4,5 +4,7 @@
   link: /seminars.html
 - name: resources
   link: /resources.html
+- name: personal
+  link: /personal.html
 - name: blog
   link: /blog.html
