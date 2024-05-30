@@ -1,6 +1,6 @@
 ---
 layout: post
-title: How I Made My Personal Website
+title: How I made my personal website
 tag: tutorial
 tag: website
 ---

@@ -5,7 +5,7 @@ body {
 }
 
 body {
-  background-color: #1f3d35; /* bbbg */
+  background-color: #0a3028; /* background */
   font-family: helvetica, arial, clean, sans-serif; /* font-size left as medium (relative) for accessibility. */
   font-size: 110%;
   margin: 3em auto 2em auto;
@@ -13,7 +13,7 @@ body {
   /* Minimum value of 1.5 used for line-height for main paragraph content. This will help people experiencing low vision
   conditions, as well as people with cognitive concerns such as Dyslexia. If the page is zoomed to increase the text size, using
   a unitless value ensures that the line height will scale proportionately. */
-  color: #f8f8f2; /* bbfg */
+  color: #d5d5d5; /* foreground */
 }
 
 h1,
@@ -38,21 +38,19 @@ p {
 }
 
 a {
-  color: #8be9fd; /* bbcyan */
+  color: #8683ff; /* blue */
 }
 
 a:hover {
-  color: #f8f8f2; /* bbfg */
+  color: #d5d5d5; /* foreground */
 }
 
 a:visited {
-  color: #bd93f9; /* bbpurple */
+  color: #c961ff; /* (blue-)purple */
 }
 
 a:active {
-  color: #ff7575;
-  /* bbred but lighter to ensure that the contrast ratio between text and background the text is placed over is high enough that
-  people experiencing low vision conditions will be able to read the content of the page. */
+  color: #ff544b; /* red */
 }
 
 ul {
@@ -75,31 +73,31 @@ ul li {
 
 header,
 nav {
-  color: #50fa7b; /* bbgreen */
+  color: #2febd2; /* green-blue */
   font-weight: bold;
 }
 
 nav a {
-  color: #61ae9a;
-  /* bbcomment but lighter to ensure that the contrast ratio between text and background the text is placed over is high enough
+  color: #72998e;
+  /* comment but lighter to ensure that the contrast ratio between text and background the text is placed over is high enough
      that people experiencing low vision conditions will be able to read the content of the page. */
   text-decoration: none;
   margin-left: 1em;
 }
 
 .meta {
-  color: #61ae9a;
-  /* bbcomment but lighter to ensure that the contrast ratio between text and background the text is placed over is high enough
+  color: #72998e;
+  /* comment but lighter to ensure that the contrast ratio between text and background the text is placed over is high enough
   that people experiencing low vision conditions will be able to read the content of the page. */
 }
 
 footer {
   font-size: 80%;
-  color: #61ae9a;
-  /* bbcomment but lighter to ensure that the contrast ratio between text and background the text is placed over is high enough
+  color: #72998e;
+  /* comment but lighter to ensure that the contrast ratio between text and background the text is placed over is high enough
   that people experiencing low vision conditions will be able to read the content of the page. */
-  border-top: 4px solid #498d7d;
-  /* bbcl but lighter to ensure that the contrast ratio between graphical objects and background the text is placed over is high
+  border-top: 4px solid #567c72;
+  /* selection but lighter to ensure that the contrast ratio between graphical objects and background the text is placed over is high
   enough that people experiencing low vision conditions will be able to read the content of the page. */
 }
 
@@ -117,16 +115,16 @@ video {
 /* Ensures media is never larger than its responsive container. */
 /* || Blog */
 ul.posts span {
-  color: #61ae9a;
-  /* bbcomment but lighter to ensure that the contrast ratio between text and background the text is placed over is high enough
+  color: #72998e;
+  /* comment but lighter to ensure that the contrast ratio between text and background the text is placed over is high enough
      people experiencing low vision conditions will be able to read the content of the page. */
   font-family: Monaco, "Courier New", monospace;
   font-size: 80%;
 }
 
 hr {
-  border: 2px solid #498d7d;
-  /* bbcl but lighter to ensure that the contrast ratio between graphical objects and background the text is placed over is high
+  border: 2px solid #567c72;
+  /* selection but lighter to ensure that the contrast ratio between graphical objects and background the text is placed over is high
   enough that people experiencing low vision conditions will be able to read the content of the page. */
   /* Set to be equal to the footer border-top. */
 }
@@ -138,19 +136,19 @@ hr {
 }
 
 #post code {
-  border: 1px solid #498d7d;
+  border: 1px solid #567c72;
   /* bbcl but lighter to ensure that the contrast ratio between graphical objects and background the text is placed over is high
   enough that people experiencing low vision conditions will be able to read the content of the page. */
-  background-color: #36685c; /* bbcl */
+  background-color: #133830; /* bb current line */
   font-size: 85%;
   padding: 0 0.2em;
 }
 
 #post pre {
-  border: 1px solid #498d7d;
+  border: 1px solid #567c72;
   /* bbcl but lighter to ensure that the contrast ratio between graphical objects and background the text is placed over is high
   enough that people experiencing low vision conditions will be able to read the content of the page. */
-  background-color: #36685c; /* bbcl */
+  background-color: #133830; /* bb current line */
   padding: 0 0.4em;
 }
 
@@ -380,6 +378,7 @@ hr {
 
 #examInformation {
   display: flex;
+  font-size: 110%;
 }
 
 #examTimes {
