@@ -145,9 +145,9 @@ to use as your password.
 Now to host your website on the University of Waterloo server:
 
 ```powershell
-mkdir public_html                                # Create directory for website
-chmod 2755 public_html                           # Restrict write access to owner
-rsync -avuP <directory-name>/_site/* public_html # Synchronises contents of _site folder with public_html
+mkdir public_html                               # Create directory for website
+chmod 2755 public_html                          # Restrict write access to owner
+rsync -avuP <directory-name>/_site/ public_html # Synchronises contents of _site folder with public_html
 ```
 	
 To view the list of files with permissions, use the command `ls -l`. The permissions in front of
